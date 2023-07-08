@@ -11,9 +11,9 @@ const Features=(props)=>{
     <Box className={styles.features} onScroll={(e)=>{console.log(e)}}>
         <Box className={styles.center}><Typography variant='h2'>Features</Typography></Box>
         <Box className={styles.featurecards}>
-        <Cards imagelink='/HomePage/feature3.jpg' title="Ready for Adventure" animate='fade-right' />
-        <Cards imagelink='/HomePage/feature2.jpg' title="Explore Nature" id='reverse' animate='fade-left'/>
-        <Cards imagelink='/HomePage/feature1.jpg' title="Make New Friends" animate='fade-right'/>
+        <Cards imagelink='https://ik.imagekit.io/mce8nb2epw/public/HomePage/feature3.jpg?updatedAt=1688844374517' title="Ready for Adventure" animate='fade-right' />
+        <Cards imagelink='https://ik.imagekit.io/mce8nb2epw/public/HomePage/feature2.jpg?updatedAt=1688844375192' title="Explore Nature" id='reverse' animate='fade-left'/>
+        <Cards imagelink='https://ik.imagekit.io/mce8nb2epw/public/HomePage/feature1.jpg?updatedAt=1688844373928' title="Make New Friends" animate='fade-right'/>
 
         <FloatingActionButton />
 

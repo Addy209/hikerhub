@@ -11,7 +11,7 @@ const Header=()=>{
 
     return <Box className={styles.HeroHeader}>
     <Box className={styles.logo}>
-        <img src='./HomePage/HeroSVG.png' />
+        <img src='https://ik.imagekit.io/mce8nb2epw/public/HomePage/HeroSVG.png?updatedAt=1688844374563' />
     </Box>
      <Box className={styles.Menu}>
     <Box className={styles.MenuItems}>
