@@ -7,7 +7,7 @@ import Image from 'next/image'
 const Hero=(props)=>{
 return<>
 <Box className={styles.HeroContainer} id='home'>
-    <Image src='./Homepage/background.svg' draggable={false} width={0} height={0} loading='lazy' quality={100} />
+    <img src='/Homepage/background.jpg' draggable={false} width={0} height={0} loading='lazy' quality={100} />
 </Box>
 <Box className={styles.HText}>
     You are in control of your trips<br/> Set price, get quotations.
