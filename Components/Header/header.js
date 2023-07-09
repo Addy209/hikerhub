@@ -60,8 +60,8 @@ export const Headernavigation=(props)=> {
         >
           <BottomNavigationAction label="Home" icon={<HomeTwoToneIcon sx={{color:'brown', fontSize:'2rem'}} />} onClick={()=>router.push(MenuItems[0].link)} />
           <BottomNavigationAction label="About" icon={<InfoTwoToneIcon sx={{color:'skyblue', fontSize:'2rem'}}  />} onClick={()=>router.push(MenuItems[1].link)} />
-          <BottomNavigationAction label="Archive" icon={<ContactSupportTwoToneIcon sx={{color:'green', fontSize:'2rem'}} />} onClick={()=>router.push(MenuItems[2].link)} />
-          <BottomNavigationAction label="Archive" icon={<ChatTwoToneIcon sx={{color:'mediumturquoise', fontSize:'2rem'}} />} onClick={()=>router.push(MenuItems[3].link)} />
+          <BottomNavigationAction label="Why Us?" icon={<ContactSupportTwoToneIcon sx={{color:'green', fontSize:'2rem'}} />} onClick={()=>router.push(MenuItems[2].link)} />
+          <BottomNavigationAction label="Feedback" icon={<ChatTwoToneIcon sx={{color:'mediumturquoise', fontSize:'2rem'}} />} onClick={()=>router.push(MenuItems[3].link)} />
         </BottomNavigation>
       </Paper>
     );
