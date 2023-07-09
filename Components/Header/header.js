@@ -14,7 +14,7 @@ const MenuItems=[{title:"Home",link:"/"}, {title:"About Us",link:"about"},{title
 
 export const LogoHeader=()=>{
     return <Box className={styles.centerLogo}>
-        <img src='https://ik.imagekit.io/mce8nb2epw/public/HomePage/logo_mobile.jpg?updatedAt=1688923759816' id="logoImage"/>
+        <img src='https://ik.imagekit.io/mce8nb2epw/public/HomePage/logo_mobile.jpg?updatedAt=1688923759816' id="logoImage" draggable={false}/>
     </Box>
     
 }
@@ -24,7 +24,7 @@ export const Header=()=>{
     
     return <Box className={styles.HeroHeader}>
     <Box className={styles.logo}>
-        <img src='https://ik.imagekit.io/mce8nb2epw/public/HomePage/HeroSVG.png?updatedAt=1688844374563'  />
+        <img src='https://ik.imagekit.io/mce8nb2epw/public/HomePage/HeroSVG.png?updatedAt=1688844374563' draggable={false}  />
     </Box>
      <Box className={styles.Menu}>
     <Box className={styles.MenuItems}>

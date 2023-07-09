@@ -259,11 +259,10 @@
 
 
 @media screen and (width<=768px) {
-    .HeroContainer>img{
-        height: 107svh;
-    }
+    
     .HeroContainer{
         position: static;
+        height: 100svh;
         
     }
 
