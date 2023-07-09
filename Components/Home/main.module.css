@@ -188,7 +188,6 @@
 }
 
 .features{
-    top:100vh;
     width: 100vw;
     margin-top: 2rem;
     height: max-content;
@@ -228,9 +227,10 @@
 }
 
 .cardsimage>img{
-    width: 60% !important;
+    width: 75% !important;
     height: 100%;
     border:5px solid #1a1616;
+    border-radius: 1rem;
     transform: skewX(5deg);
 }
 
@@ -251,16 +251,35 @@
 
 .FAB{
     position: fixed;
-    bottom:5vh;
+    bottom:7vh;
     right:2vw;
     transition: ease-in-out 0.5s;
 
 }
 
-@media screen and (width<=620px) {
-    .HeroContainer{
-        top:-5.8rem
+
+@media screen and (width<=768px) {
+    .HeroContainer>img{
+        height: 107svh;
     }
+    .HeroContainer{
+        position: static;
+        
+    }
+
+    .cardsimage>img{
+        width: 95% !important;
+        height: 100%;
+        border: none;
+        transform: none;
+       
+    }
+    
+    .cards:nth-child(2)>.cardsimage>img{
+        transform: none;
+    }
+
+   
 }
 
 @media screen and (width<=576px) {
@@ -285,16 +304,21 @@
         width: 48%;
     }
 
-    .HeroHeader{
-        display: none;
+    .cards{
+        flex-direction: column;
+    }
+    .cards:nth-child(2){
+        flex-direction: column;
     }
 
-    .HeroContainer>video, .HeroContainer>img{
+    .cardsimage{
         width: 100svw;
-        height: 100svh;
-        position: relative;
-        z-index: -1;
     }
+
+    .cardText{
+        width: 80svw;
+    }
+    
 }
 
 @media screen and (768px<= width <=992px ) {

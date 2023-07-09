@@ -141,3 +141,16 @@
 }
 
 
+
+.centerLogo{
+    width: 100svw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B3DAF6;
+}
+
+.centerLogo>img{
+    height: 3rem !important;
+    cursor: pointer;
+}
