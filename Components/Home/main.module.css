@@ -19,6 +19,7 @@
     height: 100svh;
     object-fit: cover;
     position: relative;
+    overflow: hidden;
 }
 
 
@@ -189,7 +190,6 @@
 
 .features{
     width: 100vw;
-    margin-top: 2rem;
     height: max-content;
 
 }
@@ -254,9 +254,91 @@
     bottom:7vh;
     right:2vw;
     transition: ease-in-out 0.5s;
+    z-index: 10;
 
 }
 
+.hotPlaces{
+    background: #f0f0f0;
+    height: clamp(100svh,100svh,max-content);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top:2vh;
+    text-transform: capitalize;
+    margin: 5vh 0;
+}
+
+.hpcards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.hpcard{
+    margin: 2vh 2vw;
+    height: 70svh;
+    background: #ffffff;
+    width:30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    position: relative;
+    padding: 0;
+}
+
+.hpcard_image{
+    max-height: max-content;
+    overflow: hidden;
+}
+
+.hpcard_image>img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: 5px 10%;
+}
+
+.hpcard_text{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(15, 15, 15, 0.75);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 1s ease-in-out;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hpcard_text_desc{
+    margin-top: 2vh;
+    width: 90%;
+    text-align: center;
+    overflow: hidden;
+    font-size: larger;
+}
+.hpcard_text_head{
+    overflow: hidden;
+}
+
+.hpcard:hover .hpcard_text{
+    bottom: 0;
+    height: 100%;
+}
+
+.Heading{
+    font-size: xxx-large;
+    font-weight: 900;
+    text-align: center;
+}
 
 @media screen and (width<=768px) {
     
@@ -282,6 +364,13 @@
 }
 
 @media screen and (width<=576px) {
+    .HeroContainer>video, .HeroContainer>img{
+        width: 100svw;
+        height: 95svh;
+        position: relative;
+        z-index: -1;
+    }
+
     .htext>img{
        transform: scale(0.4);
     }
@@ -317,6 +406,27 @@
     .cardText{
         width: 80svw;
     }
+
+    .hpcards{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hpcard{
+        height: max-content;
+        width: 95svw;
+    }
+
+    .hpcard_text_head{
+        font-size: large;
+    }
+    .Heading{
+        font-size: xx-large;
+        font-weight: 900;
+        width: 100%;
+    }
     
 }
 
@@ -344,7 +454,7 @@
 
     .HeroContainer>video, .HeroContainer>img{
         width: 100svw;
-        height: 100svh;
+        height: 95svh;
         position: relative;
         z-index: -1;
     }
