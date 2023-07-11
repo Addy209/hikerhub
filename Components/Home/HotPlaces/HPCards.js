@@ -5,7 +5,7 @@ import FastForwardTwoToneIcon from '@mui/icons-material/FastForwardTwoTone';
 
 const HPCards=(props)=>{
 
-    return <Box className={styles.hpcard}>
+    return <Box className={styles.hpcard} data-aos={props.animate}>
         <Box className={styles.hpcard_image}>
             <img src={props.img} height="100%" width="100%" />
         </Box>

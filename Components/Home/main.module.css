@@ -278,7 +278,7 @@
 
 .hpcard{
     margin: 2vh 2vw;
-    height: 70svh;
+    height:max-content;
     background: #ffffff;
     width:30%;
     display: flex;
@@ -430,7 +430,18 @@
     
 }
 
-@media screen and (768px<= width <=992px ) {
+@media only screen and ( width <=992px) and (orientation: landscape) {
+
+    .hpcard_text_head{
+        font-size: large;
+    }
+
+    .hpcard_text_desc{
+        font-size: small;
+    }
+}
+
+@media only screen and (768px<= width <=992px) and (orientation: portrait) {
     .htext>img{
        transform: scale(0.7);
     }
@@ -458,6 +469,8 @@
         position: relative;
         z-index: -1;
     }
+
+  
 }
 
 
