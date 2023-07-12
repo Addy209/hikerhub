@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 100%;
 }
 
 
@@ -53,7 +53,7 @@
 
 .HBtn{
     display: flex;
-    justify-content: right;
+    justify-content: left;
     flex-direction: row-reverse;
     width:20%;
 }

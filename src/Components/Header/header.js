@@ -10,7 +10,8 @@ import ContactSupportTwoToneIcon from '@mui/icons-material/ContactSupportTwoTone
 import ChatTwoToneIcon from '@mui/icons-material/ChatTwoTone';
 import { useRouter } from 'next/navigation';
 
-const MenuItems=[{title:"Home",link:"/"}, {title:"About Us",link:"about"},{title:"Why us?",link:"whyus"},{title:"Feedback",link:"feedback"}]
+const MenuItems=[{title:"Home",link:"/"}, {title:"About Us",link:"/about"},{title:"Why us?",link:"/whyus"},{title:"Feedback",link:"feedback"}]
+const LOGIN_URL='/user/login'
 
 export const LogoHeader=()=>{
     return <Box className={styles.centerLogo}>
@@ -21,21 +22,37 @@ export const LogoHeader=()=>{
 
 export const Header=()=>{
     const [currentMenu,setCurrentMenu]=React.useState(0);
-    
-    return <Box className={styles.HeroHeader}>
+    const router=useRouter()
+    const [bgColor,setbgColor]=React.useState(null)
+    React.useEffect(()=>{
+        if(currentMenu!==0){
+            setbgColor("#f0f0f0")
+        }
+        else{
+            setbgColor(null)
+        }
+    },[currentMenu])
+    console.log(currentMenu, bgColor)
+    return <Box className={styles.HeroHeader} sx={{backgroundColor:bgColor}}>
     <Box className={styles.logo}>
         <img src='https://ik.imagekit.io/mce8nb2epw/public/HomePage/HeroSVG.png?updatedAt=1688844374563' draggable={false}  />
     </Box>
      <Box className={styles.Menu}>
     <Box className={styles.MenuItems}>
         {MenuItems.map((menu,index)=>{
-            return<Box onClick={()=>setCurrentMenu(index)} key={index} className={currentMenu===index? `${styles.active} ${styles.MenuItem}`:`${styles.MenuItem}`}>
-                <Link href={menu.link}>{menu.title}</Link>
+            return<Box onClick={()=>{
+                        router.push(menu.link)
+                        setCurrentMenu(index)            }} 
+                                    key={index} className={currentMenu===index? `${styles.active} ${styles.MenuItem}`:`${styles.MenuItem}`} >
+                {menu.title}
                 </Box> 
         })}
     </Box>
     <Box className={styles.HBtn}>
-        <Box className={styles.LoginBtn}>Login</Box>
+        <Box className={styles.LoginBtn}onClick={()=>{
+            router.push(LOGIN_URL)
+            setCurrentMenu('login')
+        }}>Login</Box>
     </Box>
     </Box> 
 </Box>
