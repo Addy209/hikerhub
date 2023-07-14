@@ -1,13 +1,6 @@
 import { Box, Button, Divider, TextField } from '@mui/material'
 import React from 'react'
 import styles from './style.module.css'
-import formSave from '@/server/server'
-import Link from 'next/link'
-import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import * as jwt from 'jsonwebtoken'
-import { publicEncrypt } from 'crypto-browserify'
 import LoginImage from './loginImage'
 import LoginForm from './loginForm'
 
@@ -23,8 +16,18 @@ const Login = () => {
 
   return (
     <Box className={styles.login}>
+      <Box sx={{
+        color:'white',
+        marginTop:'-10ch',
+        marginBottom:'0ch',
+        width:'90%',
+        textAlign:'center',
+        textDecoration:'underline'
+      }}><h1>Your Next Hike is Waiting</h1></Box>
+      <Box className={styles.login_card}>
       <LoginImage />
       <LoginForm />
+      </Box>
     </Box>
   )
 }

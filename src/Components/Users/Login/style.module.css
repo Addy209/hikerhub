@@ -1,10 +1,16 @@
 .login{
-    background: url("https://ik.imagekit.io/mce8nb2epw/public/HomePage/login_background.jpg?updatedAt=1689363217836");
+    background:  linear-gradient(0deg, rgba(40, 41, 40, 0.8), rgba(41, 41, 41, 0.8)), url("https://ik.imagekit.io/mce8nb2epw/public/HomePage/login_background_new.jpg?updatedAt=1689364737239");
     display: flex;
     width: 100%;
     height: 100svh;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.login_card{
+    display: flex;
+    padding-top: 2rem;
 }
 
 .loginImage{
@@ -102,10 +108,11 @@
 }
 
 @media screen and (width<=576px) {
-    .login{
+    .login_card{
         margin-top: 0;
         padding-top: 2rem;
         align-items: flex-start;
+        width: 95%;
     }
     .loginContainer{
         width: 100%;

@@ -1,4 +1,4 @@
-import { Box, Button, Divider, TextField } from '@mui/material'
+import { Box, Button, Divider, TextField, Tooltip } from '@mui/material'
 import React from 'react'
 import styles from './style.module.css'
 import formSave from '@/server/server'
@@ -6,6 +6,7 @@ import Link from 'next/link'
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import * as jwt from 'jsonwebtoken'
 import { publicEncrypt } from 'crypto-browserify'
 
@@ -58,7 +59,7 @@ const LoginForm = () => {
         />
         </Box>
         <Box className={styles.loginFields}>
-        <Button variant='contained' size='large' type='submit' color='warning' >Login</Button>
+        <Button variant='contained' size='large' type='submit' color='warning' >Sign in</Button>
         </Box>
         <Box className={styles.forgotpassword}>
         <Box className={styles.forgotpassword_forget}><Link href={'#'} >Forgot Password?</Link></Box>
@@ -69,11 +70,13 @@ const LoginForm = () => {
           <Box sx={{width:"40%", borderTop:"3px solid black"}} ></Box>
         </Box>
         <Box className={styles.social}>
-          <Box sx={{fontSize:"large", fontWeight:900}}>Signin Using</Box>
+          <Box sx={{fontSize:"large", fontWeight:900}}>Sign in Using</Box>
           <Box className={styles.social_icons}>
-            <span><GoogleIcon sx={{fontSize:"xx-large"}} /></span>
-            <span><FacebookIcon sx={{fontSize:"xx-large"}} /></span>
-            <span><TwitterIcon sx={{fontSize:"xx-large"}} /></span>
+            <span><Tooltip title="Google" placement='top'><GoogleIcon sx={{fontSize:"xx-large"}} /></Tooltip></span>
+            <span><Tooltip title="Facebook" placement='top'><FacebookIcon sx={{fontSize:"xx-large"}} /></Tooltip></span>
+            <span><Tooltip title="Twitter" placement='top'><TwitterIcon sx={{fontSize:"xx-large"}} /></Tooltip></span>
+            <span><Tooltip title="GitHub" placement='top'><GitHubIcon sx={{fontSize:"xx-large"}} /></Tooltip></span>
+
           </Box>
           <Box className={styles.forgotpassword_signup}>Don&apos;t have an account yet? <Link href={'#'} >Signup Now</Link></Box>
         </Box>
