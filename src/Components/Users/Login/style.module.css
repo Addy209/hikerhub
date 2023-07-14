@@ -1,23 +1,33 @@
-.loginContainer, .loginFields{
+.login{
+    background: url("https://ik.imagekit.io/mce8nb2epw/public/HomePage/login_background.jpg?updatedAt=1689363217836");
     display: flex;
     width: 100%;
-    height: 100svh ;
+    height: 100svh;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+}
+
+.loginImage{
+    height: 40rem;
+    width: max-content;
+    overflow: hidden;
+}
+
+.loginImage_img{
+    height: 40rem;
+    width: auto;
+    object-fit: cover;
 }
 
 .loginForm{
     display: flex;
     height: 40rem;
     width: 30rem;
-    margin-top: 5rem;
+    
     flex-direction: column;
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
     justify-content: flex-start;
     align-items: center;
-    box-shadow: 10px 7px 29px -1px rgba(0,0,0,0.75);
--webkit-box-shadow: 10px 7px 29px -1px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 7px 29px -1px rgba(0,0,0,0.75);
 }
 
 .loginFields{
@@ -25,17 +35,36 @@
     margin: 1rem 0;
 }
 
-.loginForm::before{
-    content: "Login";
-    font-size: xxx-large;
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.logo::after{
+    content: "Welcome Back";
+    font-size: x-large;
     font-weight: 900;
     text-decoration: underline;
     margin: 1rem 0;
 }
 
+.LogoImage{
+    height: 2rem;
+}
+
+.loginFields{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 .forgotpassword{
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     width: 90%;
     margin: 1rem 0;
     font-size: larger;
@@ -46,7 +75,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 .social{
@@ -65,18 +94,37 @@
 
 .forgotpassword_signup>a, .forgotpassword_forget>a{
     text-decoration: none;
+    color: rgba(65, 105, 225, 0.662);
+}
+
+.forgotpassword_signup>a:hover, .forgotpassword_forget>a:hover{
+    color: rgba(65, 105, 225, 1);
 }
 
 @media screen and (width<=576px) {
+    .login{
+        margin-top: 0;
+        padding-top: 2rem;
+        align-items: flex-start;
+    }
+    .loginContainer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .loginForm{
-        box-shadow: -1px 0px 27px 4px rgba(0,0,0,0.75);
-        -webkit-box-shadow: -1px 0px 27px 4px rgba(0,0,0,0.75);
-        -moz-box-shadow: -1px 0px 27px 4px rgba(0,0,0,0.75);;
+        box-shadow: none;
         width: 95%;
-        margin-top: 3rem;
+        background-color: white;
+
     }
 
     .social{
         margin-top: 0.5rem;
+    }
+
+    .loginImage{
+        display: none;
     }
 }

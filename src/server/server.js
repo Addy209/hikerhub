@@ -1,11 +1,8 @@
 'use server'
 
-const formSave=async(formData)=>{
-    
-
-    const name=formData.get('email')
-    const password=formData.get('password')
-    console.log(name, password)
+const formSave=async(encData)=>{
+  
+    console.log(encData)
   }
 
   export default formSave

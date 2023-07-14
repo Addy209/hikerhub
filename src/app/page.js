@@ -16,7 +16,7 @@ export default function Homepage() {
     })
   },[])
   
-
+console.log(process.env.AES_KEY)
   return (
    <>
    <Home />
