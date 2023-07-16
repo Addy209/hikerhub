@@ -9,6 +9,7 @@ import InfoTwoToneIcon from '@mui/icons-material/InfoTwoTone';
 import ContactSupportTwoToneIcon from '@mui/icons-material/ContactSupportTwoTone';
 import ChatTwoToneIcon from '@mui/icons-material/ChatTwoTone';
 import { useRouter } from 'next/navigation';
+import {signIn,signOut,useSession} from 'next-auth/react'
 
 const MenuItems=[{title:"Home",link:"/"}, {title:"About Us",link:"/about"},{title:"Why us?",link:"/whyus"},{title:"Feedback",link:"feedback"}]
 const LOGIN_URL='/user/login'
@@ -21,6 +22,7 @@ export const LogoHeader=()=>{
 }
 
 export const Header=()=>{
+    const {data:session}=useSession()
     const [currentMenu,setCurrentMenu]=React.useState(0);
     const router=useRouter()
     const [bgColor,setbgColor]=React.useState(null)
@@ -48,12 +50,18 @@ export const Header=()=>{
                 </Box> 
         })}
     </Box>
-    <Box className={styles.HBtn}>
+    {session?.user?<>{session.user.email}<Box className={styles.HBtn}>
         <Box className={styles.LoginBtn}onClick={()=>{
-            router.push(LOGIN_URL)
+            signOut()
+            setCurrentMenu(0)
+        }}>Logout</Box>
+    </Box></>:<Box className={styles.HBtn}>
+        <Box className={styles.LoginBtn}onClick={()=>{
+            signIn()
+            // router.push(LOGIN_URL)
             setCurrentMenu('login')
         }}>Login</Box>
-    </Box>
+    </Box>}
     </Box> 
 </Box>
 

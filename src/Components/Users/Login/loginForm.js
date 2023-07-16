@@ -7,8 +7,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import * as jwt from 'jsonwebtoken'
-import { publicEncrypt } from 'crypto-browserify'
+import {signIn} from 'next-auth/react'
 
 const backgroundWhite={
   backgroundColor:"white",
@@ -20,16 +19,13 @@ const backgroundWhite={
 
 const LoginForm = () => {
 
-  const key=process.env.AES_KEY
-  console.log(key)
-  const handleSubmit=data=>{
+  const handleSubmit=async(data)=>{
     console.log('In handleSubmit')
-    const loginData={
+    const result=await signIn('credentials',{
       email:data.get('email'),
       password:data.get('password')
-    }
-    console.log(encData)
-    formSave(encData)
+    })
+    console.log(result)
   }
 
   
@@ -72,10 +68,10 @@ const LoginForm = () => {
         <Box className={styles.social}>
           <Box sx={{fontSize:"large", fontWeight:900}}>Sign in Using</Box>
           <Box className={styles.social_icons}>
-            <span><Tooltip title="Google" placement='top'><GoogleIcon sx={{fontSize:"xx-large"}} /></Tooltip></span>
+            <span><Tooltip title="Google" placement='top'><GoogleIcon onClick={()=>signIn('google')} sx={{fontSize:"xx-large"}} /></Tooltip></span>
             <span><Tooltip title="Facebook" placement='top'><FacebookIcon sx={{fontSize:"xx-large"}} /></Tooltip></span>
             <span><Tooltip title="Twitter" placement='top'><TwitterIcon sx={{fontSize:"xx-large"}} /></Tooltip></span>
-            <span><Tooltip title="GitHub" placement='top'><GitHubIcon sx={{fontSize:"xx-large"}} /></Tooltip></span>
+            <span><Tooltip title="GitHub" placement='top'><GitHubIcon onClick={()=>signIn('github')} sx={{fontSize:"xx-large"}} /></Tooltip></span>
 
           </Box>
           <Box className={styles.forgotpassword_signup}>Don&apos;t have an account yet? <Link href={'#'} >Signup Now</Link></Box>

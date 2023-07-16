@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Button, Divider, TextField } from '@mui/material'
 import React from 'react'
 import styles from './style.module.css'
@@ -22,7 +24,6 @@ const Login = () => {
         marginBottom:'0ch',
         width:'90%',
         textAlign:'center',
-        textDecoration:'underline'
       }}><h1>Your Next Hike is Waiting</h1></Box>
       <Box className={styles.login_card}>
       <LoginImage />
